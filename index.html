@@ -2153,7 +2153,8 @@ body.drive-video-open{overflow:hidden;}
   .drive-video-close{width:40px;height:40px;}
   .drive-video-frame-wrap{aspect-ratio:9/16;max-height:calc(100svh - 86px);}
 }
-</style>\n
+</style>
+
 
 <style id="v10-featured-video-centering">
 @media (min-width: 761px){
@@ -2195,6 +2196,132 @@ body.drive-video-open{overflow:hidden;}
   .mobile-nav-socials{display:flex;gap:10px;padding:20px 0 2px;}
   .mobile-nav-socials .nav-social-btn{width:44px;height:44px;background:#fff;border-color:rgba(10,10,10,.17);color:#0a0a0a;}
   .mobile-nav-socials .nav-social-btn svg{width:17px;height:17px;}
+}
+</style>
+
+
+<style id="v12-mobile-functionality-fix">
+@media (max-width:760px){
+  .page[data-route="flyer-design"]{overflow-x:hidden!important;}
+  .page[data-route="flyer-design"] .page-hero,
+  .page[data-route="flyer-design"] section{width:100%!important;min-width:0!important;}
+  .page[data-route="flyer-design"] .social-category-filter{
+    display:flex!important;flex-wrap:nowrap!important;width:calc(100% + 36px)!important;
+    margin-left:-18px!important;margin-right:-18px!important;padding:2px 18px 12px!important;
+    overflow-x:auto!important;overflow-y:hidden!important;-webkit-overflow-scrolling:touch!important;
+    overscroll-behavior-x:contain!important;scroll-snap-type:x proximity!important;touch-action:pan-x!important;
+    scrollbar-width:none!important;
+  }
+  .page[data-route="flyer-design"] .social-category-filter::-webkit-scrollbar{display:none!important;}
+  .page[data-route="flyer-design"] .social-filter-btn{
+    display:inline-flex!important;align-items:center!important;justify-content:center!important;flex:0 0 auto!important;
+    min-height:42px!important;padding:0 15px!important;font-size:10px!important;line-height:1!important;
+    touch-action:manipulation!important;-webkit-tap-highlight-color:transparent!important;scroll-snap-align:start!important;
+  }
+  .page[data-route="flyer-design"] .social-filter-status{width:100%!important;margin:2px 0 22px!important;min-width:0!important;}
+  .page[data-route="flyer-design"] .social-filter-grid{
+    display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:24px!important;
+    width:100%!important;min-width:0!important;overflow:visible!important;
+  }
+  .page[data-route="flyer-design"] .social-filter-grid .project-card{
+    display:block!important;width:100%!important;min-width:0!important;max-width:none!important;
+  }
+  .page[data-route="flyer-design"] .social-filter-grid .project-card.social-filter-hidden{display:none!important;}
+  .page[data-route="flyer-design"] .social-filter-grid .project-media{
+    position:relative!important;width:100%!important;height:auto!important;aspect-ratio:4/5!important;
+    overflow:hidden!important;border-radius:14px!important;
+  }
+  .page[data-route="flyer-design"] .social-filter-grid .project-media img{
+    position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;
+  }
+  .page[data-route="flyer-design"] .project-meta{width:100%!important;min-width:0!important;}
+  .page[data-route="flyer-design"] .project-meta>div{min-width:0!important;}
+  .page[data-route="flyer-design"] .project-meta h3{overflow-wrap:anywhere!important;}
+}
+@media (max-width:860px){
+  .page[data-route="home"] .tile-marquee{
+    overflow-x:auto!important;overflow-y:visible!important;scroll-snap-type:none!important;
+    -webkit-overflow-scrolling:touch!important;touch-action:pan-x!important;overscroll-behavior-x:contain!important;
+  }
+  .page[data-route="home"] .tile-track{animation:none!important;transform:none!important;width:max-content!important;}
+  .page[data-route="home"] .tile-set{display:flex!important;flex:none!important;}
+  .page[data-route="home"] .tile-set[aria-hidden="true"]{display:flex!important;}
+}
+.page[data-route="home"].home-motion .hero-text>*{animation:homeMobileRise .72s cubic-bezier(.2,.72,.2,1) both!important;}
+.page[data-route="home"].home-motion .hero-text>*:nth-child(2){animation-delay:.07s!important;}
+.page[data-route="home"].home-motion .hero-text>*:nth-child(3){animation-delay:.14s!important;}
+.page[data-route="home"].home-motion .hero-text>*:nth-child(4){animation-delay:.21s!important;}
+.page[data-route="home"].home-motion .swatch{animation:homeSwatchPulse 2.4s ease-in-out .8s infinite!important;}
+@keyframes homeMobileRise{from{opacity:0;transform:translate3d(0,20px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+@keyframes homeSwatchPulse{0%,100%{box-shadow:0 0 0 0 rgba(214,255,63,0)}50%{box-shadow:0 0 0 7px rgba(214,255,63,.16)}}
+@media (hover:none){
+  .social-filter-btn:active,.featured-more:active,.contact-btn:active,.navcta:active,.nav-social-btn:active{transform:scale(.97)!important;}
+}
+@media (prefers-reduced-motion:reduce){
+  .page[data-route="home"].home-motion .hero-text>*,.page[data-route="home"].home-motion .swatch{animation:none!important;}
+}
+</style>
+
+
+<style id="v13-social-mobile-final-fix">
+@media (max-width: 860px){
+
+  /* Social page must always render immediately after hash navigation */
+  .page[data-route="flyer-design"] .reveal{
+    opacity:1 !important;
+    transform:none !important;
+    visibility:visible !important;
+  }
+
+  .page[data-route="flyer-design"] section{
+    min-height:0 !important;
+  }
+
+  .page[data-route="flyer-design"] .social-filter-grid{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:24px !important;
+    width:100% !important;
+    opacity:1 !important;
+    visibility:visible !important;
+  }
+
+  .page[data-route="flyer-design"] .social-filter-grid .project-card{
+    width:100% !important;
+    min-width:0 !important;
+    opacity:1 !important;
+    visibility:visible !important;
+  }
+
+  .page[data-route="flyer-design"] .social-filter-grid .project-card.social-filter-hidden{
+    display:none !important;
+  }
+
+  .page[data-route="flyer-design"] .project-media{
+    width:100% !important;
+    aspect-ratio:4 / 5 !important;
+    height:auto !important;
+    overflow:hidden !important;
+  }
+
+  .page[data-route="flyer-design"] .project-media img{
+    position:absolute !important;
+    inset:0 !important;
+    width:100% !important;
+    height:100% !important;
+    object-fit:cover !important;
+  }
+
+  .page[data-route="flyer-design"] .social-category-filter{
+    position:relative !important;
+    z-index:3 !important;
+  }
+
+  /* CTA at the bottom should also never remain hidden */
+  .page[data-route="flyer-design"] .cta-section .reveal{
+    opacity:1 !important;
+    transform:none !important;
+  }
 }
 </style>
 
@@ -3801,6 +3928,174 @@ body.drive-video-open{overflow:hidden;}
     applyFilter('all');
   })();
 
+</script>
+
+
+<script id="v12-mobile-functionality-js">
+(function(){
+  'use strict';
+  var reduceMotion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  document.addEventListener('click',function(e){
+    var link=e.target.closest&&e.target.closest('a[data-link]');
+    if(!link)return;
+    var href=link.getAttribute('href')||'';
+    if(href.charAt(0)!=='#')return;
+    e.preventDefault();
+    if(typeof closeMobileNav==='function')closeMobileNav();
+    document.body.classList.remove('menu-open');
+    document.body.style.overflow='';
+    if(location.hash===href){
+      if(typeof render==='function')render(false);
+      requestAnimationFrame(handleActiveRoute);
+    }else{
+      location.hash=href;
+    }
+  },{passive:false});
+
+  function replayHomeMotion(){
+    var home=document.querySelector('.page[data-route="home"]');
+    if(!home||!home.classList.contains('is-active')||reduceMotion)return;
+    home.classList.remove('home-motion');
+    void home.offsetWidth;
+    home.classList.add('home-motion');
+  }
+
+  function ensureSocialPageVisible(){
+    var social=document.querySelector('.page[data-route="flyer-design"]');
+    if(!social||!social.classList.contains('is-active'))return;
+    if(window.innerWidth<=860){
+      social.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
+    }
+    document.body.classList.remove('menu-open');
+    document.body.style.overflow='';
+  }
+
+  function handleActiveRoute(){
+    var active=document.querySelector('.page.is-active');
+    if(!active)return;
+    var route=active.getAttribute('data-route');
+    if(route==='home')replayHomeMotion();
+    if(route==='flyer-design')ensureSocialPageVisible();
+  }
+  window.addEventListener('hashchange',function(){requestAnimationFrame(handleActiveRoute);});
+  window.addEventListener('pageshow',function(){requestAnimationFrame(handleActiveRoute);});
+  requestAnimationFrame(handleActiveRoute);
+
+  if(!reduceMotion){
+    var marquees=Array.prototype.slice.call(document.querySelectorAll('.page[data-route="home"] .tile-marquee'));
+    marquees.forEach(function(marquee){
+      var pausedUntil=0;
+      var lastTime=performance.now();
+      var reverse=marquee.classList.contains('reverse');
+      var initialized=false;
+      var position=0;
+
+      function prepare(){
+        if(initialized||window.innerWidth>860||marquee.scrollWidth<=marquee.clientWidth+4)return;
+        position=reverse?marquee.scrollWidth/2:(marquee.scrollLeft||0);
+        marquee.scrollLeft=position;
+        initialized=true;
+      }
+      function pauseTemporarily(){pausedUntil=performance.now()+2200;}
+      marquee.addEventListener('touchstart',pauseTemporarily,{passive:true});
+      marquee.addEventListener('touchmove',pauseTemporarily,{passive:true});
+      marquee.addEventListener('pointerdown',pauseTemporarily,{passive:true});
+      marquee.addEventListener('wheel',pauseTemporarily,{passive:true});
+
+      function tick(now){
+        if(window.innerWidth<=860&&marquee.offsetParent!==null&&marquee.scrollWidth>marquee.clientWidth+4){
+          prepare();
+          if(now>pausedUntil){
+            var dt=Math.min(40,now-lastTime);
+            var speed=.026*dt;
+            if(reverse){
+              position-=speed;
+              if(position<=1)position=marquee.scrollWidth/2;
+            }else{
+              position+=speed;
+              if(position>=marquee.scrollWidth/2)position-=marquee.scrollWidth/2;
+            }
+            marquee.scrollLeft=position;
+          }else{
+            position=marquee.scrollLeft;
+          }
+        }
+        lastTime=now;
+        requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    });
+  }
+
+  var socialPage=document.querySelector('.page[data-route="flyer-design"]');
+  if(socialPage){
+    socialPage.addEventListener('click',function(e){
+      var btn=e.target.closest&&e.target.closest('[data-social-filter]');
+      if(!btn)return;
+      e.preventDefault();e.stopPropagation();
+      var filter=btn.getAttribute('data-social-filter')||'all';
+      var buttons=socialPage.querySelectorAll('[data-social-filter]');
+      var cards=socialPage.querySelectorAll('[data-social-category]');
+      var label=document.getElementById('socialFilterLabel');
+      var count=document.getElementById('socialFilterCount');
+      var labels={all:'All Work',fashion:'Fashion','wedding-event':'Weddings & Events',vehicle:'Vehicle',university:'University','restaurant-hotel':'Restaurant & Hotel',product:'Product Selling','real-estate':'Real Estate'};
+      var visible=0;
+      buttons.forEach(function(b){
+        var active=b.getAttribute('data-social-filter')===filter;
+        b.classList.toggle('is-active',active);
+        b.setAttribute('aria-pressed',active?'true':'false');
+      });
+      cards.forEach(function(card){
+        var show=filter==='all'||card.getAttribute('data-social-category')===filter;
+        card.classList.toggle('social-filter-hidden',!show);
+        if(show)visible++;
+      });
+      if(label)label.textContent=labels[filter]||'All Work';
+      if(count)count.textContent=visible+(visible===1?' project':' projects');
+    },{passive:false});
+  }
+})();
+</script>
+
+
+<script id="v13-social-route-fallback">
+(function(){
+  function forceSocialVisible(){
+    var page=document.querySelector('.page[data-route="flyer-design"]');
+    if(!page || !page.classList.contains('is-active')) return;
+
+    page.querySelectorAll('.reveal').forEach(function(el){
+      el.classList.add('in');
+      el.style.opacity='1';
+      el.style.transform='none';
+      el.style.visibility='visible';
+    });
+
+    var grid=page.querySelector('.social-filter-grid');
+    if(grid){
+      grid.style.opacity='1';
+      grid.style.visibility='visible';
+    }
+  }
+
+  window.addEventListener('hashchange',function(){
+    requestAnimationFrame(function(){
+      forceSocialVisible();
+      setTimeout(forceSocialVisible,80);
+      setTimeout(forceSocialVisible,300);
+    });
+  });
+
+  window.addEventListener('load',function(){
+    forceSocialVisible();
+    setTimeout(forceSocialVisible,120);
+  });
+
+  document.addEventListener('visibilitychange',function(){
+    if(!document.hidden) forceSocialVisible();
+  });
+})();
 </script>
 
 </body>
