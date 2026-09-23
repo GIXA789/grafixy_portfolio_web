@@ -2325,6 +2325,199 @@ body.drive-video-open{overflow:hidden;}
 }
 </style>
 
+
+<style id="v14-branding-boards">
+/* =========================================================
+   V14 — Branding: one complete uploaded image per project.
+   Logo + Branding featured sections appear above Social Media.
+   ========================================================= */
+
+/* Four main category cards */
+#work .home-category-grid{
+  grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+}
+#work .home-category-grid .branding-home-tile{
+  background:#0b0b0b !important;
+  color:#fff !important;
+}
+#work .home-category-grid .branding-home-tile .cat-title{color:#fff !important;}
+#work .home-category-grid .branding-home-tile .cat-num{color:rgba(255,255,255,.55) !important;}
+#work .home-category-grid .branding-home-tile .cat-arrow{color:var(--lime) !important;}
+#work .home-category-grid .branding-home-tile:hover{background:#151515 !important;}
+
+/* Home branding tiles: each tile is ONE complete branding presentation image */
+.scroll-tile.tile-branding{
+  width:286px !important;
+  height:auto !important;
+  aspect-ratio:4 / 5 !important;
+}
+.tile-branding img{
+  object-fit:cover !important;
+  background:#111 !important;
+  padding:0 !important;
+}
+
+/* Branding portfolio page: one uploaded image per project card */
+.branding-image-grid .project-media{
+  position:relative !important;
+  width:100% !important;
+  aspect-ratio:4 / 5 !important;
+  height:auto !important;
+  overflow:hidden !important;
+  background:#ecece8 !important;
+}
+.branding-image-grid .project-media img{
+  position:absolute !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  padding:0 !important;
+}
+.branding-image-grid .project-card:hover .project-media img{
+  transform:scale(1.025);
+}
+.branding-image-grid .project-media img{
+  transition:transform .45s cubic-bezier(.2,.8,.2,1);
+}
+
+@media(max-width:1000px){
+  #work .home-category-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;}
+}
+@media(max-width:640px){
+  #work .home-category-grid{grid-template-columns:1fr !important;}
+  .scroll-tile.tile-branding{
+    width:min(76vw,286px) !important;
+    aspect-ratio:4 / 5 !important;
+  }
+}
+</style>
+
+
+<style id="v15-home-logo-branding-single-image">
+/* Home Logo and Branding previews use one complete image per card. */
+.home-featured .tile-logo img{
+  object-fit:cover !important;
+  background:#111 !important;
+  padding:0 !important;
+}
+.home-featured .tile-branding img{
+  object-fit:cover !important;
+  background:#111 !important;
+  padding:0 !important;
+}
+</style>
+
+
+<style id="v16-home-logo-branding-static-two">
+/* Logo Design + Branding on homepage:
+   exactly 2 static tiles, no horizontal scrolling / marquee. */
+.home-static-feature{
+  overflow:visible !important;
+}
+.home-static-feature .featured-head{
+  margin-bottom:24px !important;
+}
+.home-two-tile-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+  width:100%;
+}
+.home-static-tile{
+  min-width:0;
+  display:block;
+  color:inherit;
+  text-decoration:none;
+}
+.home-static-media{
+  position:relative;
+  width:100%;
+  aspect-ratio:4 / 5;
+  overflow:hidden;
+  border-radius:14px;
+  background:#111;
+  border:1px solid rgba(10,10,10,.10);
+  box-shadow:0 12px 30px rgba(0,0,0,.07);
+  transition:transform .3s ease,box-shadow .3s ease;
+}
+.home-static-media img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  background:#111;
+  transition:transform .45s cubic-bezier(.2,.8,.2,1);
+}
+.home-static-badge{
+  position:absolute;
+  left:14px;
+  top:14px;
+  z-index:2;
+  padding:6px 9px;
+  border:1px solid rgba(255,255,255,.45);
+  border-radius:999px;
+  background:rgba(0,0,0,.54);
+  color:#fff;
+  backdrop-filter:blur(8px);
+  font:500 8px/1 var(--mono);
+  letter-spacing:.08em;
+}
+.home-static-meta{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:14px;
+  padding:13px 2px 0;
+}
+.home-static-meta strong{
+  font:400 clamp(18px,1.7vw,24px)/1 var(--display);
+  letter-spacing:-.035em;
+  color:#0a0a0a;
+}
+.home-static-meta span{
+  flex:none;
+  font:500 8px/1.2 var(--mono);
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  color:#536616;
+}
+.home-static-tile:hover .home-static-media{
+  transform:translateY(-6px);
+  box-shadow:0 20px 44px rgba(0,0,0,.12);
+}
+.home-static-tile:hover .home-static-media img{
+  transform:scale(1.02);
+}
+
+/* Ensure there is absolutely no marquee/scrolling behavior in these two sections. */
+.home-static-feature .tile-marquee,
+.home-static-feature .tile-track,
+.home-static-feature .tile-set{
+  display:none !important;
+}
+
+@media(max-width:700px){
+  .home-two-tile-grid{
+    grid-template-columns:1fr;
+    gap:26px;
+  }
+  .home-static-feature .featured-head{
+    align-items:center !important;
+    flex-direction:row !important;
+  }
+  .home-static-feature .featured-more{
+    width:auto !important;
+    flex:none !important;
+  }
+  .home-static-meta strong{
+    font-size:20px;
+  }
+}
+</style>
+
 </head>
 <body>
 
@@ -2338,7 +2531,7 @@ body.drive-video-open{overflow:hidden;}
       <a href="#/flyer-design" data-link data-route="flyer-design">Social Media</a>
       <a href="#/event-flyer-design" data-link data-route="event-flyer-design">Event Flyers</a>
       <a href="#video-portfolio" data-link>Video Edits</a>
-      <a href="#services" data-link>Branding</a>
+      <a href="#/branding" data-link data-route="branding">Branding</a>
       <a href="#/contact" data-link data-route="contact">Contact</a>
       <div class="mobile-nav-socials" aria-label="Social media profiles">
         <a class="nav-social-btn" href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
@@ -2452,11 +2645,11 @@ body.drive-video-open{overflow:hidden;}
           <div class="svc-desc">A mark built to work everywhere — business card, storefront sign, app icon — with a clear rationale behind every shape and colour choice.</div>
           <div class="svc-tag">View logo work →</div>
         </a>
-        <a class="svc-row" href="#/contact" data-link>
+        <a class="svc-row" href="#/branding" data-link>
           <div class="svc-index">02</div>
           <div class="svc-name">Brand Identity</div>
-          <div class="svc-desc">Logo, colour system, typography and usage guide, packaged so anyone on your team can apply it consistently.</div>
-          <div class="svc-tag">Build my brand →</div>
+          <div class="svc-desc">Logo, colour system, typography and usage guide, presented as complete visual brand systems rather than isolated marks.</div>
+          <div class="svc-tag">View branding →</div>
         </a>
         <a class="svc-row" href="#/flyer-design" data-link>
           <div class="svc-index">03</div>
@@ -2478,19 +2671,24 @@ body.drive-video-open{overflow:hidden;}
     <div class="wrap reveal">
       <p class="kicker">Selected work</p>
       <h2 class="section-h">Browse the portfolio by category.</h2>
-      <div class="cat-grid">
+      <div class="cat-grid home-category-grid">
         <a class="cat-card" href="#/logo-design" data-link>
-          <div class="cat-num">01 — Identity</div>
+          <div class="cat-num">01 — Logo</div>
           <div class="cat-title">Logo Design</div>
           <div class="cat-arrow">View marks <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
         </a>
+        <a class="cat-card branding-home-tile" href="#/branding" data-link>
+          <div class="cat-num">02 — Brand Systems</div>
+          <div class="cat-title">Branding</div>
+          <div class="cat-arrow">View brand systems <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </a>
         <a class="cat-card" href="#/flyer-design" data-link>
-          <div class="cat-num">02 — Social</div>
+          <div class="cat-num">03 — Social</div>
           <div class="cat-title">Social Media Flyer Design</div>
           <div class="cat-arrow">View creatives <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
         </a>
         <a class="cat-card" href="#/event-flyer-design" data-link>
-          <div class="cat-num">03 — Events</div>
+          <div class="cat-num">04 — Events</div>
           <div class="cat-title">Event Flyer Design</div>
           <div class="cat-arrow">View posters <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
         </a>
@@ -2506,96 +2704,46 @@ body.drive-video-open{overflow:hidden;}
           <p class="kicker">Featured portfolio</p>
           <h2 class="section-h">A few recent pieces. <span class="muted">Explore more by category.</span></h2>
         </div>
-        <p>A quick look at logo, social media and event design work before you dive into the full portfolio pages.</p>
+        <p>A quick look at branding, social media and event work before you explore each full portfolio.</p>
       </div>
 
-      <!-- LOGO PREVIEW -->
-      <div class="featured-category">
+
+      <!-- BRANDING PREVIEW -->
+      <div class="featured-category home-static-feature">
         <div class="featured-head">
           <div class="featured-head-copy">
-            <span class="featured-eyebrow">01 — Identity</span>
-            <h3 class="featured-title">Logo Design</h3>
+            <span class="featured-eyebrow">01 — Branding</span>
+            <h3 class="featured-title">Branding</h3>
           </div>
-          <a class="featured-more" href="#/logo-design" data-link>View all logo designs <span>→</span></a>
+          <a class="featured-more" href="#/branding" data-link>See more <span>→</span></a>
         </div>
 
-        <div class="tile-marquee logos-marquee" aria-label="Scrolling logo projects">
-      <div class="tile-track">
-        <div class="tile-set"><a class="scroll-tile tile-logo" href="#/logo-design" data-link>
-      <img src="Images/logo01.webp" alt="Logo Project 01">
-      <span class="scroll-tile-tag">LOGO</span>
-      <span class="scroll-tile-shine" aria-hidden="true"></span>
-      <div class="scroll-tile-caption"><strong>Logo Project 01</strong><span>View project ↗</span></div>
-    </a>
-<a class="scroll-tile tile-logo" href="#/logo-design" data-link>
-      <img src="Images/logo02.webp" alt="Logo Project 02">
-      <span class="scroll-tile-tag">IDENTITY</span>
-      <span class="scroll-tile-shine" aria-hidden="true"></span>
-      <div class="scroll-tile-caption"><strong>Logo Project 02</strong><span>View project ↗</span></div>
-    </a>
-<a class="scroll-tile tile-logo" href="#/logo-design" data-link>
-      <img src="Images/logo03.webp" alt="Logo Project 03">
-      <span class="scroll-tile-tag">MARK</span>
-      <span class="scroll-tile-shine" aria-hidden="true"></span>
-      <div class="scroll-tile-caption"><strong>Logo Project 03</strong><span>View project ↗</span></div>
-    </a>
-<a class="scroll-tile tile-logo" href="#/logo-design" data-link>
-      <img src="Images/logo01.webp" alt="Logo System 01">
-      <span class="scroll-tile-tag">BRAND</span>
-      <span class="scroll-tile-shine" aria-hidden="true"></span>
-      <div class="scroll-tile-caption"><strong>Logo System 01</strong><span>View project ↗</span></div>
-    </a>
-<a class="scroll-tile tile-logo" href="#/logo-design" data-link>
-      <img src="Images/logo02.webp" alt="Logo System 02">
-      <span class="scroll-tile-tag">WORDMARK</span>
-      <span class="scroll-tile-shine" aria-hidden="true"></span>
-      <div class="scroll-tile-caption"><strong>Logo System 02</strong><span>View project ↗</span></div>
-    </a>
-<a class="scroll-tile tile-logo" href="#/logo-design" data-link>
-      <img src="Images/logo03.webp" alt="Logo System 03">
-      <span class="scroll-tile-tag">SYMBOL</span>
-      <span class="scroll-tile-shine" aria-hidden="true"></span>
-      <div class="scroll-tile-caption"><strong>Logo System 03</strong><span>View project ↗</span></div>
-    </a></div>
-        <div class="tile-set" aria-hidden="true"><a class="scroll-tile tile-logo" href="#/logo-design" data-link>
-      <img src="Images/logo01.webp" alt="Logo Project 01">
-      <span class="scroll-tile-tag">LOGO</span>
-      <span class="scroll-tile-shine" aria-hidden="true"></span>
-      <div class="scroll-tile-caption"><strong>Logo Project 01</strong><span>View project ↗</span></div>
-    </a>
-<a class="scroll-tile tile-logo" href="#/logo-design" data-link>
-      <img src="Images/logo02.webp" alt="Logo Project 02">
-      <span class="scroll-tile-tag">IDENTITY</span>
-      <span class="scroll-tile-shine" aria-hidden="true"></span>
-      <div class="scroll-tile-caption"><strong>Logo Project 02</strong><span>View project ↗</span></div>
-    </a>
-<a class="scroll-tile tile-logo" href="#/logo-design" data-link>
-      <img src="Images/logo03.webp" alt="Logo Project 03">
-      <span class="scroll-tile-tag">MARK</span>
-      <span class="scroll-tile-shine" aria-hidden="true"></span>
-      <div class="scroll-tile-caption"><strong>Logo Project 03</strong><span>View project ↗</span></div>
-    </a>
-<a class="scroll-tile tile-logo" href="#/logo-design" data-link>
-      <img src="Images/logo01.webp" alt="Logo System 01">
-      <span class="scroll-tile-tag">BRAND</span>
-      <span class="scroll-tile-shine" aria-hidden="true"></span>
-      <div class="scroll-tile-caption"><strong>Logo System 01</strong><span>View project ↗</span></div>
-    </a>
-<a class="scroll-tile tile-logo" href="#/logo-design" data-link>
-      <img src="Images/logo02.webp" alt="Logo System 02">
-      <span class="scroll-tile-tag">WORDMARK</span>
-      <span class="scroll-tile-shine" aria-hidden="true"></span>
-      <div class="scroll-tile-caption"><strong>Logo System 02</strong><span>View project ↗</span></div>
-    </a>
-<a class="scroll-tile tile-logo" href="#/logo-design" data-link>
-      <img src="Images/logo03.webp" alt="Logo System 03">
-      <span class="scroll-tile-tag">SYMBOL</span>
-      <span class="scroll-tile-shine" aria-hidden="true"></span>
-      <div class="scroll-tile-caption"><strong>Logo System 03</strong><span>View project ↗</span></div>
-    </a></div>
+        <div class="home-two-tile-grid">
+          <a class="home-static-tile" href="#/branding" data-link>
+            <div class="home-static-media">
+              <img src="Images/branding01.webp" alt="Brand Project 01">
+              <span class="home-static-badge">BRANDING</span>
+            </div>
+            <div class="home-static-meta">
+              <strong>Brand Project 01</strong>
+              <span>View project ↗</span>
+            </div>
+          </a>
+
+          <a class="home-static-tile" href="#/branding" data-link>
+            <div class="home-static-media">
+              <img src="Images/branding02.webp" alt="Brand Project 02">
+              <span class="home-static-badge">BRANDING</span>
+            </div>
+            <div class="home-static-meta">
+              <strong>Brand Project 02</strong>
+              <span>View project ↗</span>
+            </div>
+          </a>
+        </div>
       </div>
-    </div>
-      </div>
+
+
 
       <!-- SOCIAL MEDIA PREVIEW -->
       <div class="featured-category">
@@ -2920,6 +3068,92 @@ body.drive-video-open{overflow:hidden;}
     </div>
   </section>
 
+</div>
+
+
+<!-- ============ BRANDING PAGE ============ -->
+<div class="page" data-route="branding">
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="#/" data-link>Home</a> <span>/</span> <span>Branding</span></div>
+      <p class="kicker">02 — Branding Portfolio</p>
+      <h1 class="page-h">Branding projects presented as complete visual stories.</h1>
+      <p class="page-sub">Each project uses one complete branding presentation image. Add your finished branding board as a single image and keep the project name underneath.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap reveal">
+      <div class="portfolio-top">
+        <div>
+          <p class="kicker">Selected branding work</p>
+          <h2 class="section-h">Complete brand presentations. <span class="muted">One image per project.</span></h2>
+        </div>
+        <div class="portfolio-count">06 PROJECT SLOTS</div>
+      </div>
+
+      <div class="portfolio-grid branding-image-grid">
+
+        <a class="project-card" href="#/contact" data-link>
+          <div class="project-media">
+            <img src="Images/branding01.webp" alt="Branding Project 01">
+            <span class="project-num">01</span><span class="project-type">BRANDING</span>
+          </div>
+          <div class="project-meta"><div><h3>Brand Project 01</h3><p>BRAND IDENTITY · VISUAL SYSTEM</p></div><span class="project-arrow">→</span></div>
+        </a>
+
+        <a class="project-card" href="#/contact" data-link>
+          <div class="project-media">
+            <img src="Images/branding02.webp" alt="Branding Project 02">
+            <span class="project-num">02</span><span class="project-type">BRANDING</span>
+          </div>
+          <div class="project-meta"><div><h3>Brand Project 02</h3><p>BRAND IDENTITY · VISUAL SYSTEM</p></div><span class="project-arrow">→</span></div>
+        </a>
+
+        <a class="project-card" href="#/contact" data-link>
+          <div class="project-media">
+            <img src="Images/branding03.webp" alt="Branding Project 03">
+            <span class="project-num">03</span><span class="project-type">BRANDING</span>
+          </div>
+          <div class="project-meta"><div><h3>Brand Project 03</h3><p>BRAND IDENTITY · VISUAL SYSTEM</p></div><span class="project-arrow">→</span></div>
+        </a>
+
+        <a class="project-card" href="#/contact" data-link>
+          <div class="project-media">
+            <img src="Images/branding04.webp" alt="Branding Project 04">
+            <span class="project-num">04</span><span class="project-type">BRANDING</span>
+          </div>
+          <div class="project-meta"><div><h3>Brand Project 04</h3><p>BRAND IDENTITY · VISUAL SYSTEM</p></div><span class="project-arrow">→</span></div>
+        </a>
+
+        <a class="project-card" href="#/contact" data-link>
+          <div class="project-media">
+            <img src="Images/branding05.webp" alt="Branding Project 05">
+            <span class="project-num">05</span><span class="project-type">BRANDING</span>
+          </div>
+          <div class="project-meta"><div><h3>Brand Project 05</h3><p>BRAND IDENTITY · VISUAL SYSTEM</p></div><span class="project-arrow">→</span></div>
+        </a>
+
+        <a class="project-card" href="#/contact" data-link>
+          <div class="project-media">
+            <img src="Images/branding06.webp" alt="Branding Project 06">
+            <span class="project-num">06</span><span class="project-type">BRANDING</span>
+          </div>
+          <div class="project-meta"><div><h3>Brand Project 06</h3><p>BRAND IDENTITY · VISUAL SYSTEM</p></div><span class="project-arrow">→</span></div>
+        </a>
+
+      </div>
+
+      <div class="portfolio-tip"><b>Simple setup:</b> export each complete branding presentation as one image and replace <code>Images/branding01.webp</code>, <code>branding02.webp</code>, and so on.</div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="wrap cta-grid reveal">
+      <h2 class="cta-h">Need a complete identity that feels <span>consistent everywhere?</span></h2>
+      <div class="cta-side"><a class="navcta" href="#/contact" data-link>Start a branding project →</a></div>
+    </div>
+  </section>
 </div>
 
 <!-- ============ LOGO DESIGN PAGE ============ -->
@@ -3665,7 +3899,7 @@ body.drive-video-open{overflow:hidden;}
       <a href="#/flyer-design" data-link>Social Media</a>
       <a href="#/event-flyer-design" data-link>Event Flyers</a>
       <a href="#video-portfolio" data-link>Video Edits</a>
-      <a href="#services" data-link>Branding</a>
+      <a href="#/branding" data-link>Branding</a>
       <a href="#/contact" data-link>Contact</a>
       <a class="social-profile-link" data-social="instagram" href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram ↗</a>
     </div>
@@ -3674,7 +3908,7 @@ body.drive-video-open{overflow:hidden;}
 </footer>
 
 <script>
-  var ROUTES = ['home','logo-design','flyer-design','event-flyer-design','contact'];
+  var ROUTES = ['home','branding','logo-design','flyer-design','event-flyer-design','contact'];
   var pages = Array.prototype.slice.call(document.querySelectorAll('.page'));
   var navLinks = Array.prototype.slice.call(document.querySelectorAll('.navlinks a[data-route]'));
 
